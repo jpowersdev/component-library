@@ -15,7 +15,7 @@ const HeroSliderDemo = () => {
       <style jsx>{`
         div {
           position: relative;
-          height: 1080px;
+          height: 200px;
           color: #fff;
         }
       `}</style>

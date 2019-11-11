@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactChild } from 'react';
 import { useSpring, animated as a, config } from 'react-spring';
 
 import styled from 'styled-components';
 
-interface props {
+interface heroSliderProps {
   images: string[];
-  children?: any;
+  children?: ReactChild | ReactChild[];
   interval?: number;
 }
 
@@ -13,11 +13,11 @@ interface props {
  * Loops through list of background images with fade effect
  * Defaults to a 4 second loop, can be overridden
  *
- * @param images List of images to be rendered
- * @optional children Optional children
- * @optional interval Time between transitions, in ms
+ * @param {string} images - List of images to be rendered
+ * @param {string} [children] - Optional children
+ * @param {number} [interval] - Time between transitions, in ms
  */
-const HeroSlider = ({ images, children, interval }: props) => {
+const HeroSlider = ({ images, children, interval }: heroSliderProps) => {
   const [initialRender, setInitialRender] = useState(true);
   const [idx, setIdx] = useState(0);
   const [next, setNext] = useState(1);

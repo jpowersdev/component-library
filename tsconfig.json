@@ -14,8 +14,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": ".",
-    "paths": { "src": "./src" }
+    "paths": { "src": ["./src"] }
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "typedocOptions": {
+    "mode": "modules",
+    "out": "docs",
+    "exclude": ["**/demo/*.tsx", "**/pages/*.tsx"]
+  }
 }

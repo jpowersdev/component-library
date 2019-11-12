@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { Link } from "src/components/NextLink";
 import { useScrollTop } from "src/hooks/useScrollTop";
 import { css } from "@emotion/core";
-import { useSpring } from "react-spring";
+import { useSpring, config, animated as a } from "react-spring";
 
 const NavIcon = styled(Box)`
   &:after,
@@ -69,7 +69,7 @@ const Nav = styled(Flex)(
   border
 );
 
-const NavLink = ({ brand, shrink, ...props }: any) => {
+const NavLink = ({ brand, ...props }: any) => {
   return (
     <Link
       {...props}
@@ -81,6 +81,7 @@ const NavLink = ({ brand, shrink, ...props }: any) => {
 
 const NavBar = () => {
   const [expanded, set] = useState(false);
+
   return (
     <Nav
       p={2}

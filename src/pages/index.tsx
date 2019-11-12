@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import HeroSliderDemo from "src/demo/HeroSlider";
 import { Box, Card, Heading, Text } from "rebass";
 import styled from "@emotion/styled";
-import NextLink from "next/link";
-import { css } from "@emotion/core";
 import { NavBar } from "src/components/Navigation";
 import { Tiles } from "@rebass/layout";
 

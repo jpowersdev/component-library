@@ -3,12 +3,6 @@ import { useSpring, animated as a, config } from "react-spring";
 
 import styled from "@emotion/styled";
 
-interface heroSliderProps {
-  images: string[];
-  children?: ReactChild | ReactChild[];
-  interval?: number;
-}
-
 /**
  * Loops through list of background images with fade effect
  * Defaults to a 4 second loop, can be overridden
@@ -17,7 +11,7 @@ interface heroSliderProps {
  * @param {string} [children] - Optional children
  * @param {number} [interval] - Time between transitions, in ms
  */
-const HeroSlider = ({ images, children, interval }: heroSliderProps) => {
+const HeroSlider = ({ images, children, interval }) => {
   const [initialRender, setInitialRender] = useState(true);
   const [idx, setIdx] = useState(0);
   const [next, setNext] = useState(1);

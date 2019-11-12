@@ -1,26 +1,28 @@
-import HeroSlider from 'src/components/HeroSlider';
+import HeroSlider from "src/components/HeroSlider";
+import styled from "@emotion/styled";
+import { space, position, layout } from "styled-system";
 
 const images = [
-  'https://wallpapercave.com/wp/wp2570965.jpg',
-  'https://www.freegreatpicture.com/files/147/18429-hd-color-background-wallpaper.jpg',
-  'https://wallpapercave.com/wp/wp2634897.jpg'
+  "https://wallpapercave.com/wp/wp2570965.jpg",
+  "https://www.freegreatpicture.com/files/147/18429-hd-color-background-wallpaper.jpg",
+  "https://wallpapercave.com/wp/wp2634897.jpg"
 ];
 
-const HeroSliderDemo = () => {
+const HeroSliderDemo = ({ children, ...props }: any) => {
   return (
-    <div>
-      <HeroSlider images={images}>
-        <h2>Hello</h2>
+    <StyledHeroSliderDemo
+      position={"relative"}
+      height={"60vh"}
+      maxHeight={500}
+      {...props}
+    >
+      <HeroSlider images={images} interval={7000}>
+        {children}
       </HeroSlider>
-      <style jsx>{`
-        div {
-          position: relative;
-          height: 200px;
-          color: #fff;
-        }
-      `}</style>
-    </div>
+    </StyledHeroSliderDemo>
   );
 };
+
+const StyledHeroSliderDemo = styled("div")(position, space, layout);
 
 export default HeroSliderDemo;

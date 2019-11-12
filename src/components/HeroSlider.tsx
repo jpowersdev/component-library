@@ -1,7 +1,7 @@
-import { useState, useEffect, ReactChild } from 'react';
-import { useSpring, animated as a, config } from 'react-spring';
+import { useState, useEffect, ReactChild } from "react";
+import { useSpring, animated as a, config } from "react-spring";
 
-import styled from 'styled-components';
+import styled from "@emotion/styled";
 
 interface heroSliderProps {
   images: string[];
